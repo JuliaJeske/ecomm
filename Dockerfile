@@ -1,9 +1,11 @@
-FROM node:18
+FROM node:lts-alpine
+
+RUN mkdir -p /app-ecomm && chown -R node:node /app-ecomm
 
 WORKDIR /app-ecomm
 
 COPY . .
 
-RUN npm install
+
 
 ENTRYPOINT npm start
